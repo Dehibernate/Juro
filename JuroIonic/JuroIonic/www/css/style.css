@@ -1,0 +1,69 @@
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+
+.list,
+.pane,
+ion-view.pane,
+ion-content{
+  background: #343434;
+}
+
+.card{
+  background: #343434;
+}
+
+.popup-head, .popup-title, .popup-body, .popup-buttons{
+  background-color:#424242;
+}
+
+.popup-buttons .button-positive{
+  background-color: #555555;
+}
+
+.list,
+a.item,
+.item{
+  border-color: #656565;
+}
+
+ a.item, div.item,
+ .item,
+ .item-complex .item-content,
+ .item-complex .item-content,
+ .item .item-content,
+ .item .item-content{
+   background: #424242;
+ }
+
+.item.active,
+.item.activated,
+.item-complex.active .item-content,
+.item-complex.activated .item-content,
+.item .item-content.active,
+.item .item-content.activated {
+  border-color: #eee;
+  background-color: #555555;
+}
+
+.item p{
+  color: #CECECE;
+}
+
+h1,h2,h3, a.item-content, a.item, span, label {
+  color: #fafafa;
+}
+
+label,
+label.item-input{
+  background: #424242;
+}
+
+.item-input input, input[type="text"], input[type="password"]{
+  border-radius: 7.5px;
+  padding:5px;
+  padding-left:10px;
+  background: #383838;
+  border-bottom: solid #656565 1px;
+  color: white;
+}

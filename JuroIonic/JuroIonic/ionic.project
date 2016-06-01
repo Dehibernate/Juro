@@ -1,0 +1,15 @@
+{
+  "name": "JuroIonic",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/host",
+      "proxyUrl": "ws://192.168.1.92:3000"
+    }
+  ],
+  "gulpStartupTasks": [
+    "src",
+    "babel",
+    "watch"
+  ]
+}

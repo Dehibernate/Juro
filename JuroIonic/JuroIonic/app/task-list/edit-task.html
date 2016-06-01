@@ -1,0 +1,24 @@
+<ion-view view-title="Add Task">
+  <ion-nav-buttons side="right">
+    <button class="button icon ion-checkmark-round" ng-click="add()"
+            ng-show="task.name && task.startTime && task.endTime && task.name.length > 0">Save
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-footer" has-bouncing="false">
+    <ion-list>
+
+      <label class="item-input" style="vertical-align: top; width:100%">
+        <input type="text" id="taskName"  placeholder="Task Name" ng-model="task.name"/>
+      </label>
+
+      <label class="item-input" style="vertical-align: top; width:100%">
+        <label class="padding-right">Start Time: </label>
+        <input ng-disabled="task.finishedOn != undefined || task.startedOn != undefined" type="time" ng-model="task.startTime"/>
+      </label>
+      <label class="item-input" style="vertical-align: top; width:100%">
+        <label class="padding-right">End Time: </label>
+        <input ng-disabled="task.finishedOn != undefined || task.startedOn != undefined" type="time" ng-model="task.endTime"/>
+      </label>
+  </ion-content>
+</ion-view>

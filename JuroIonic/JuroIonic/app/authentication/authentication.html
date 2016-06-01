@@ -1,0 +1,76 @@
+<ion-view view-title="Welcome to Juro">
+  <ion-content class="has-footer" has-bouncing="false" class="padding">
+    <div class="padding button-bar">
+      <a class="button button-dark" ng-click="authType = 'signup'"
+         ng-class="{'active': authType == 'signup'}">Signup</a>
+      <a class="button button-dark" ng-click="authType = 'login'" ng-class="{'active': authType == 'login'}">Login</a>
+    </div>
+
+    <style>
+      input.input-box, textarea {
+        margin-top: 10px;
+      }
+
+      input.input-box:focus, textarea:focus {
+        background: #555555;
+      }
+
+      .input-label {
+        color: #ffffff;
+      }
+
+      .item {
+        border: none
+      }
+
+      form {
+        border: solid #555555 2px;
+      }
+
+      a {
+        color: #fafafa
+      }
+    </style>
+
+    <div class="padding" ng-switch on="authType">
+      <form>
+        <div class="list">
+          <label class="item padding-right item-input item-stacked-label">
+            <span class="input-label">Username</span>
+            <input class="input-box" type="text" ng-model="username" placeholder="JohnSmith"/>
+          </label>
+
+          <label ng-show="authType == 'signup'" class="item padding-right item-input item-stacked-label">
+            <span class="input-label">Email</span>
+            <input class="input-box" type="email" ng-model="email" placeholder="John.Smith@domain.com"/>
+          </label>
+          <label ng-class="authType == 'login' ? 'padding-bottom' : ''" class="item padding-right item-input item-stacked-label">
+            <span class="input-label">Password</span>
+            <input class="input-box" type="password" ng-model="password" placeholder="********"/>
+          </label>
+
+          <label ng-show="authType == 'signup'" class="item padding-right padding-bottom item-input item-stacked-label">
+            <span class="input-label">Confirm Password</span>
+            <input class="input-box" type="password" ng-model="confirmPassword" placeholder="********"/>
+          </label>
+        </div>
+
+      </form>
+      <div class="padding-top" ng-switch on="authType">
+        <a ng-switch-when="login" ng-disabled="!(username.length > 0 && password.length > 0)"
+           class="button button-dark" style="width:100%" ng-click="login(username,password)"> Login </a>
+
+        <div ng-show="authType == 'login'" style="float:right" class="padding-top padding-bottom">
+          <a ng-click="forgotPassword()"><strong>Forgot password?</strong></a>
+        </div>
+
+        <a ng-switch-when="signup"
+           ng-disabled="!(username.length > 0 && password.length > 0 && confirmPassword.length > 0 && password == confirmPassword && verifyEmail(email))"
+           class="button button-dark" style="width:100%" class="button button-dark" style="width:100%"
+           ng-click="signup(username,email,password,confirmPassword)"> Create Account</a>
+      </div>
+
+
+    </div>
+  </ion-content>
+</ion-view>

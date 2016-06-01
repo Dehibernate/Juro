@@ -1,0 +1,1 @@
+bower install && npm install && gulp babel && ionic state restore 

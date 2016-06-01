@@ -1,0 +1,9 @@
+To install this app, you will need an Android device.
+
+Firstly, you need to allow unknown sources in the security settings.
+
+Open the OS Settings > Security and tick Unknown Sources
+
+Secondly, transfer the apk file to your phone using a cable or via email.
+
+Finally, use a file browser on your device to open the .apk file and press install.

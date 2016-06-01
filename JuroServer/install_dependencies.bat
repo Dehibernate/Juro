@@ -1,0 +1,2 @@
+npm install && cp -r "superlogin templates/templates" node_modules/superlogin && cd node_modules/superlogin && npm remove nodemailer && npm install nodemailer@0.7.1 && cd ../.. && echo "Done" || cd ../..
+pause

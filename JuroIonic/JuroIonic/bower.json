@@ -1,0 +1,16 @@
+{
+  "name": "Juro",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.2.4",
+	"angular-mocks": "1.4.3"
+  },
+  "dependencies": {
+    "moment": "^2.10.6",
+    "angular-moment": "^0.10.3",
+    "ng-superlogin": "0.2.1",
+    "pouchdb": "^5.3.0",
+    "underscore": "^1.8.3",
+    "angular-underscore-module": "^1.0.3"
+  }
+}

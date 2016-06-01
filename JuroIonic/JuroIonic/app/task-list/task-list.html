@@ -1,0 +1,56 @@
+<ion-view view-title="{{date}}">
+  <ion-nav-buttons side="right">
+    <button class="button" ng-hide="isScheduleOld()" ng-click="data.showReorder = !data.showReorder">Reorder</button>
+    <button class="button icon ion-plus-round" ui-sref="task-edit({schedule_id:schedule._id})"></button>
+    <!--<button class="button icon ion-ios-more" ng-click="popover.show($event)"></button>-->
+  </ion-nav-buttons>
+  <ion-content has-bouncing="false" ng-cloak>
+    <h3 ng-show="schedule && schedule.date" class="padding-top">
+      <center> Tasks for {{schedule.date}}</center>
+    </h3>
+
+    <div ng-hide="schedule" class="item">
+      <center>
+        <h2>No schedule here. Would you like to create one?</h2>
+        <br>
+        <button class="button button-small button-assertive" ng-click="createSchedule()">Create Schedule</button>
+      </center>
+    </div>
+
+    <ion-list delegate-handle="taskList" show-reorder="!isScheduleOld() && data.showReorder">
+      <ion-item class="card item-remove-animate item-icon-right"
+                ui-sref="task-edit({schedule_id: schedule._id, task: task})"
+                ng-repeat="task in schedule.tasks | orderBy: 'startTime' track by task._id">
+        <div class="item-avatar item-text-wrap">
+          <img ng-src="{{getStatusImage(task)}}"/>
+          <h2 class="padding-bottom">{{task.name}}</h2>
+          <p> {{task.status}} </p>
+          <p> Starts: {{formatTime(task.startTime)}} </p>
+          <p ng-show="task.startedOn != undefined"> Activated: {{formatTime(task.startedOn)}} </p>
+          <p ng-show="task.finishedOn != undefined"> Finished: {{formatTime(task.finishedOn)}} </p>
+          <p> Ends: {{formatTime(task.endTime)}} </p>
+        </div>
+
+        <ion-reorder-button ng-if="task.startedOn == undefined && task.finishedOn == undefined" on-reorder="moveItem(task, $fromIndex, $toIndex)" style="color:lightgray" class="ion-navicon"></ion-reorder-button>
+
+        <ion-option-button class="button-balanced" ng-show="!isScheduleOld() && task.startedOn == undefined && task.finishedOn == undefined"
+        ng-click="activate(task)"> Start
+        </ion-option-button>
+
+        <ion-option-button class="button-assertive"
+                           ng-show="task.startedOn == undefined || task.finishedOn != undefined"
+                           ng-click="remove(task)"> Delete
+        </ion-option-button>
+
+        <ion-option-button class="button-balanced" ng-show="!isScheduleOld() &&  task.startedOn != undefined && task.finishedOn == undefined"
+                           ng-click="finish(task)"> Finish
+        </ion-option-button>
+
+        <ion-option-button class="button-assertive"
+                           ng-show="!isScheduleOld() &&  task.startedOn != undefined && task.finishedOn == undefined"
+                           ng-click="deactivate(task)"> Stop
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

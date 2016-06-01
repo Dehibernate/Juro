@@ -1,0 +1,17 @@
+To Install this Application you need to make sure you are running Windows 10. The app will not run on any older versions.
+
+Firstly make sure you have Developer mode turned on. To do this type 'Developer Settings'  in the start menu and press enter. Select Developer mode and approve the confirmation.
+
+Please open the following link: https://technet.microsoft.com/en-gb/windows/jj874388.aspx
+
+Perform the steps in the following sections, in this order:
+1.Install the root certificate (this is the JuroIonic.cer file)
+2.Verify the requirements (on the app itself)
+3.Side laod the app for a user
+
+You need to open a PowerShell command prompts and navigate to this folder. To open power shell, type PowerShell in the windows start menu.
+
+Once opened, type the following two commands in order:
+
+import-module appx
+add-appxpackage "JuroIonic.appx”

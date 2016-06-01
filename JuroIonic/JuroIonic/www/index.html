@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+        <title></title>
+
+        <link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
+          <link href="css/style.css" rel="stylesheet">
+
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+  <link href="css/ionic.app.css" rel="stylesheet">-->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <script src="lib/ng-superlogin/ng-superlogin.min.js"></script>
+    <script src="lib/pouchdb/dist/pouchdb.min.js"></script>
+    <script src="lib/underscore/underscore-min.js"></script>
+    <script src="lib/moment/min/moment.min.js"></script>
+    <script src="lib/angular-moment/angular-moment.min.js"></script>
+
+    <!-- your app's js -->
+    <script src="src/app.js"></script>
+    <script src="src/controllers.js"></script>
+    <script src="src/authentication/authentication.controller.js"></script>
+    <script src="src/task-list/task-list.controllers.js"></script>
+    <script src="src/schedule-list/schedule-list.controller.js"></script>
+    <script src="src/settings/settings.controller.js"></script>
+    <script src="src/services/services.js"></script>
+  </head>
+
+  <body ng-app="starter">
+<!--
+    The nav bar that will be updated as we navigate between views.
+  -->
+  <ion-nav-bar class="bar-dark">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+<!--
+    The views will be rendered in the <ion-nav-view> directive below
+    Templates are in the /templates folder (but you could also
+    have templates inline in this html file if you'd like).
+  -->
+  <ion-nav-view></ion-nav-view>
+<!-- <ion-footer-bar class="bar bar-dark" ng-controller="MainFooter">
+    <style>
+      #overflowingContent {
+        width: -webkit-max-content;
+        width: max-content;
+        overflow: hidden;
+      }
+
+      #thing {
+        display: block;
+        float: left;
+      }
+    </style>
+
+      <ion-scroll style="overflow: hidden"  id="ionScrollRegion" direction="x">
+        <div id="overflowingContent">
+          <a id="#thing" class="padding button button-dark icon-left ion-funnel">Filter</a>
+          <a id="#thing" class="padding button button-dark icon-left ion-android-funnel">Sort</a>
+          <a id="#thing" class="padding button button-dark icon-left ion-arrow-down-a" ng-click="download()">Download</a>
+          <a id="#thing" class="padding button button-dark icon-left ion-arrow-up-a" ng-click="upload()">Upload</a>
+          <a id="#thing" class="padding button button-dark icon-left ion-android-list" ng-click="tasks()">Tasks</a>
+      </div>
+    </ion-scroll> -->
+
+  </body>
+
+</html>

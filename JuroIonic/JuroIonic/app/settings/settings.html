@@ -1,0 +1,12 @@
+<ion-view view-title="Settings">
+  <ion-content has-bouncing="false">
+    <div class="item">
+      <label> User: {{user}}</label><br>
+      <label> DB Type: {{dbAdapter}}</label>
+    </div>
+    <div class="card">
+      <a class="item" ng-click="logout()">Logout</a>
+      <a class="item" ng-click="logoutAll()">Logout (Secure)</a>
+    </div>
+  </ion-content>
+</ion-view>
